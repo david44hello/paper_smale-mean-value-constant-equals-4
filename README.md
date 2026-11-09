@@ -1,4 +1,4 @@
-# Smale's mean value constant equals 4
+# Smale's mean value constant (1981) equals 4
 
 What is in this repository:
 
