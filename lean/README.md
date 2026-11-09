@@ -55,4 +55,4 @@ Each must print `[propext, Classical.choice, Quot.sound]`.
 
 ## Status
 
-This repository is private for now. The other statements of the paper are not yet in Lean. `lake comparator` accepted all three theorems above on November 8, 2026. The proof has also had one independent check, by an AI.
+This repository is private for now. The other statements of the paper are not yet in Lean. `lake comparator` accepted all three theorems above on November 8, 2026.
