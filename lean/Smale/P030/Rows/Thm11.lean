@@ -1,8 +1,10 @@
 /-
 Smale/P030/Rows/Thm11.lean — Theorem 1.1 of the paper in the paper's own normalization (`p'(0) ≠ 0`, the definitions of
-`Smale/P030/Rows/DefsGen.lean`). The scaling line of the paper (l.41): dividing `p` by `p'(0)` turns the paper's class
-into the class `𝓟_d` of `Smale/Defs/Basic.lean` (`p'(0) = 1`, ratio `|p(c)|/|c|`), so `K(d)` and `K*` are the same in
-both normalizations, and Theorem 1.1 follows from `kstar_eq_four` and `tendsto_Kd_four`.
+`Smale/P030/Rows/DefsGen.lean`). `S(p)` is unchanged when `p` is multiplied by a nonzero constant (the definition of
+`S(p)`); proved here, not cited. So dividing `p` by `p'(0)` turns the paper's class into the class `𝓟_d` of
+`Smale/Defs/Basic.lean` (`p'(0) = 1`, ratio `|p(c)|/|c|`), so `K(d)` and `K*` are the same in both normalizations,
+and Theorem 1.1 follows from `kstar_eq_four` and `tendsto_Kd_four`.
+Copyright (C) Dave Goel 2026--now. Licensed under the Apache License 2.0; see LICENSE.
 -/
 import Smale.P030.Contract
 import Smale.P030.Rows.DefsGen
@@ -54,8 +56,9 @@ theorem Sval_eq_mval_div {p : ℂ[X]} (h1 : p.derivative.eval 0 ≠ 0) :
   unfold Sval mval
   rw [critRatiosGen_eq p rfl h1]
 
-/-- The scaling line (l.41, not numbered): `K(d)` is the same for `p'(0) ≠ 0` and for `p'(0) = 1`. It lets the
-rows use the paper's normalization while the proved `kstar_eq_four` uses `p'(0) = 1`. -/
+/-- `S(p)` is unchanged when `p` is multiplied by a nonzero constant (the definition of `S(p)`); proved here, not
+cited. Hence `K(d)` is the same for `p'(0) ≠ 0` and for `p'(0) = 1`. It lets the rows use the paper's normalization
+while the proved `kstar_eq_four` uses `p'(0) = 1`. -/
 theorem KdGen_eq_Kd (d : ℕ) : KdGen d = Kd d := by
   apply le_antisymm
   · refine iSup_le fun p => ?_
@@ -70,7 +73,7 @@ theorem KstarGen_eq_Kstar : KstarGen = Kstar := by
   unfold KstarGen Kstar
   simp only [KdGen_eq_Kd]
 
-/-- **Theorem 1.1** (l.47-49): `lim_{d → ∞} K(d) = sup_{d ≥ 2} K(d) = 4`; therefore `K* = 4`. -/
+/-- **Theorem 1.1**: `K* = lim_{d → ∞} K(d) = 4`, where `K* = sup_{d ≥ 2} K(d)`. -/
 theorem thm_1_1 : Tendsto KdGen atTop (𝓝 ((4 : ℝ) : EReal)) ∧ KstarGen = ((4 : ℝ) : EReal) := by
   have hfun : KdGen = Kd := funext KdGen_eq_Kd
   exact ⟨hfun ▸ tendsto_Kd_four, KstarGen_eq_Kstar ▸ kstar_eq_four⟩

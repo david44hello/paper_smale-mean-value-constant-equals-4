@@ -2,8 +2,12 @@
 Smale/Proofs/ArgPrinciple.lean — the argument principle and Rouché's theorem for POLYNOMIALS on a circle
 `|w - c| = R`, proved from Mathlib's circle integrals (no new assumption): for `f` with no zero on the circle,
 `∮ f'/f = 2πi · #(zeros of f in |w - c| < R)`; and `|g| < |f|` on the circle gives the same number of zeros for
-`f + g` and `f`. The unit-circle forms (used for Lemmas 4.1, 4.2) are the case `c = 0`, `R = 1`; the small circles are
-used for the Hurwitz step of Lemma 5.3.
+`f + g` and `f`. The unit-circle forms (Rouché in the proof of [G, Lemma 7.11], the zero count in the
+proof of [G, Lemma 8.2]) are the case `c = 0`, `R = 1`; the small circles are used for the Hurwitz step in
+`Smale/Proofs/Lemma53.lean`.
+[G] D. Goel, Smale's mean value constant exceeds 1.1559, and other miscellanea, Zenodo, 2026, version 6.08,
+https://doi.org/10.5281/zenodo.23729510.
+Copyright (C) Dave Goel 2026--now. Licensed under the Apache License 2.0; see LICENSE.
 -/
 import Smale.Defs.Basic
 

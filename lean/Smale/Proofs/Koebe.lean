@@ -6,6 +6,7 @@ Bieberbach: for `G ∈ 𝒮`, the function `q(w) = G(w)/w` has a holomorphic squ
 with `h'(0) = -a₂/2`; the area theorem gives `|a₂| ≤ 2`.
 Koebe: if `G` omits `w`, the Koebe transform `G/(1 - G/w)` is in `𝒮` with second coefficient `a₂ + 1/w`.
 Sanity rows: `area_b1_sharp`, `koebe_function_sharp` show that the hypotheses can be met and the constants are best possible.
+Copyright (C) Dave Goel 2026--now. Licensed under the Apache License 2.0; see LICENSE.
 -/
 import Smale.Proofs.AreaThm
 

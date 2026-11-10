@@ -2,6 +2,7 @@
 Smale/Proofs/JNAssembly.lean — [JN, Prop. 4.2], the first sentence, proved: for an admissible pair `(W, B)` and
 `0 < A < 1/B(0)` there is a polynomial of `𝓟` with `m(p) > A`. The route avoids the Riemann map, Runge's theorem in
 general, Hilbert's lemniscate theorem and the Jordan curve theorem; see the modules imported here.
+Copyright (C) Dave Goel 2026--now. Licensed under the Apache License 2.0; see LICENSE.
 -/
 import Smale.Proofs.JNBase
 import Smale.Proofs.JNCrit
@@ -86,11 +87,12 @@ theorem jn_ratio_of_close {W B : ℂ → ℂ} {P : ℂ[X]} {z : ℂ} {b₀ t A' 
   have h2 : ‖W z‖ * (t / b₀) < ‖W z‖ * (‖B z‖ / b₀) := mul_lt_mul_of_pos_left hBb hWpos
   nlinarith
 
-/-- **[JN, Prop. 4.2]** (A. Jatar and T. W. Ng, arXiv:2610.21472v2, an unrefereed preprint; the paper's Theorem 2.2, tex
-l.146-148), verbatim:
+/-- **[JN, Prop. 4.2]** (A. Jatar and T. W. Ng, arXiv:2610.21472v2, an unrefereed preprint),
+verbatim:
 "For every admissible pair $(W,B)$ and every positive real number $A < \frac{1}{B(0)}$, there is a polynomial
 $P \in \mathcal{P}$ such that $S(P) > A$. Consequently $$\Bee \leq \M, \ \Bee_{d} \leq \M \quad (d \geq 0) $$"
-Lean form: the first sentence only (the "Consequently" is derived: `thm_2_2_hence`); `P ∈ 𝒫` is `∃ d ≥ 2, IsPd d p`.
+Lean form: the first sentence only (the "Consequently" is not proved in this repository); `P ∈ 𝒫` is
+`∃ d ≥ 2, IsPd d p`.
 The route is not the one in [JN]; see the headers of the modules imported here. -/
 theorem jatarNg_prop_4_2_proved (W B : ℂ → ℂ) (k : ℕ) (hWB : IsAdmissible W B k) (A : ℝ) (hA0 : 0 < A)
     (hA : A < 1 / (B 0).re) :

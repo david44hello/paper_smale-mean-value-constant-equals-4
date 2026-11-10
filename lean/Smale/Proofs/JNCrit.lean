@@ -5,6 +5,7 @@ Then (`perturb_crit`): for large `m`, every critical point `b` of `H_m = P + X q
 Write `P = X a`, so `H_m(b)/b = a(b) + q(b)^{m+1}`, and split by the size of `|q(b)|`, with `0 < ρ < 1`:
 below `1 - ρ` there is no critical point at all; in the band `[1 - ρ, 1 + ρ]`, `|q(b)|^{m+1} = O(1/m)`; above `1 + ρ`,
 `|q(b)|^{m+1}` beats `a(b)`, because `|a| ≤ C |q|^e` wherever `|q| ≥ 1`.
+Copyright (C) Dave Goel 2026--now. Licensed under the Apache License 2.0; see LICENSE.
 -/
 import Smale.Proofs.Lemma53
 

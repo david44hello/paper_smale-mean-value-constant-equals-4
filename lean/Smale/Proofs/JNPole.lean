@@ -1,6 +1,7 @@
 /-
 Smale/Proofs/JNPole.lean — pole pushing: for a compact `E` with connected complement, every `1/(w - y)`, `y ∉ E`, is a
 uniform limit of polynomials on `E`.
+Copyright (C) Dave Goel 2026--now. Licensed under the Apache License 2.0; see LICENSE.
 -/
 import Smale.Defs.Basic
 

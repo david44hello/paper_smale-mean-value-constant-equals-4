@@ -3,6 +3,7 @@ Smale/Proofs/JNFekete.lean — Fekete separation: for a compact infinite `E` wit
 disjoint from `E`, one polynomial is small on `E` and larger on `F`. Fekete points on `E` make the Lagrange basis
 bounded by `1` on `E`; a finite family of polynomials separating `F` from `E` then forces the node polynomial to be
 large on `F`. This replaces Hilbert's lemniscate theorem.
+Copyright (C) Dave Goel 2026--now. Licensed under the Apache License 2.0; see LICENSE.
 -/
 import Smale.Proofs.JNPole
 

@@ -2,6 +2,7 @@
 Smale/P030/EE.lean — the entire function `E` and the three bounds of its modulus: far left, on the cross-cut,
 on the exit. `rtU` is the branch of `y^{1/M}` holomorphic across the negative axis, so paths in the closed upper half plane
 need no limit at a cut.
+Copyright (C) Dave Goel 2026--now. Licensed under the Apache License 2.0; see LICENSE.
 -/
 import Smale.P030.Defs
 

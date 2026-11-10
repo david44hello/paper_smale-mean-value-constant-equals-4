@@ -2,6 +2,7 @@
 Smale/Proofs/JNRunge.lean — Runge on `W(closed disk)`: a function `G` holomorphic on the unit disk is, on `|z| ≤ r < 1`,
 uniformly near `p ∘ W` for a polynomial `p` (`W` univalent). The Cauchy formula, pulled back through `W`, writes `G ∘ W⁻¹`
 as an integral of functions `1/(W ζ - w)`, each of them a uniform limit of polynomials by pole pushing.
+Copyright (C) Dave Goel 2026--now. Licensed under the Apache License 2.0; see LICENSE.
 -/
 import Smale.Proofs.JNUnivalent
 import Smale.Proofs.JNPole

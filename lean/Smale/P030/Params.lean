@@ -1,6 +1,7 @@
 /-
 Smale/P030/Params.lean — the `M`-th root transform `ξ(t)^M = y(t^M)` of a univalent map with `y(0) = 0`, and the choice of the
 numbers `M`, `a`, then `C`.
+Copyright (C) Dave Goel 2026--now. Licensed under the Apache License 2.0; see LICENSE.
 -/
 import Smale.P030.Defs
 

@@ -1,7 +1,9 @@
 /-
 Smale/P030/Contract.lean — `Kstar = 4`. The assemblies `pair_W`, `pair_F`, `exists_poly_gt`,
-`kstar_eq_four` are proved from `Bridge`, `EE`, `Strip`, `WSide`, `Params`. No hypothesis on any classical fact appears.
+`kstar_eq_four` are proved from `Bridge`, `EE`, `Strip`, `WSide`, `Params`, and the upper bound `K* ≤ 4` from `CFLBound`.
+No hypothesis on any classical fact appears.
 The reduction from a domain to a pair of functions on the disc, together with the bridge, is `bridge_pair`.
+Copyright (C) Dave Goel 2026--now. Licensed under the Apache License 2.0; see LICENSE.
 -/
 import Smale.P030.Bridge
 import Smale.P030.Defs
@@ -30,8 +32,8 @@ theorem combDisc_differentiableOn {lam : ℝ} (h : 0 ≤ lam) (xs : Finset ℝ) 
     (comb_differentiableOn lam xs).comp cayley_differentiableOn fun t ht => cayley_im_pos ht
   exact cayleyInv_differentiableOn.comp h1 fun t ht => comb_im_pos h xs (cayley_im_pos ht)
 
-/-- **The `W` of the pair.** Univalent, normalized up to `ε`, bounded by a number that does not see `P`, and near each `b ∈ P`
-as small as Koebe allows: the point `1` of `k_δ` is reached from every `b ∈ P`, exactly. -/
+/-- **The `W` of the pair.** Univalent on the disk, `W(0) = 0`, `|W'(0)| ≥ 1 - ε`, `|W| ≤ 2/(1 - δ)²` (a bound that does
+not see `P`), and near each `b ∈ P`, `|W| < (1 + ε)/(1 + δ)²`, where `1/(1 + δ)²` is the value of `k_δ` at the point `1`. -/
 theorem pair_W {δ ε : ℝ} (hδ0 : 0 < δ) (hδ1 : δ < 1) (hε : 0 < ε) (P : Finset ℂ) (hP : ∀ b ∈ P, ‖b‖ = 1 ∧ b ≠ 1) :
     ∃ W : ℂ → ℂ, IsUnivalentOn W disk ∧ W 0 = 0 ∧ 1 - ε ≤ ‖deriv W 0‖ ∧ (∀ t ∈ disk, ‖W t‖ ≤ 2 / (1 - δ) ^ 2) ∧
       ∀ b ∈ P, ∃ ρ : ℝ, 0 < ρ ∧ ∀ t ∈ disk, ‖t - b‖ < ρ → ‖W t‖ < (1 + ε) / (1 + δ) ^ 2 := by
@@ -213,7 +215,7 @@ theorem pair_F {ε R : ℝ} (hε : 0 < ε) :
 
 /-! ### The pair and the bridge -/
 
-/-- A point of the closed disk away from all `M`-th roots of `-1` has `t^M` away from `-1`. -/
+/-- A point `t` with `‖t‖ < 1` away from all `M`-th roots of `-1` has `t^M` away from `-1`. -/
 theorem exists_eta {M : ℕ} (hM : 1 ≤ M) (P : Finset ℂ) (hP : ∀ t : ℂ, t ^ M = -1 → t ∈ P) {ρ : ℂ → ℝ}
     (hρ : ∀ b ∈ P, 0 < ρ b) :
     ∃ η : ℝ, 0 < η ∧ ∀ t : ℂ, ‖t‖ < 1 → (∀ b ∈ P, ρ b ≤ ‖t - b‖) → η ≤ ‖t ^ M + 1‖ := by
@@ -233,7 +235,7 @@ theorem exists_eta {M : ℕ} (hM : 1 ≤ M) (P : Finset ℂ) (hP : ∀ t : ℂ, 
   rw [mem_ball, dist_eq_norm] at hmem
   linarith
 
-/-- For every `S < 4`, a polynomial with `m(p) > S`. -/
+/-- For every `S` with `0 < S < 4`, a polynomial with `m(p) > S`. -/
 theorem exists_poly_gt {S : ℝ} (hS0 : 0 < S) (hS : S < 4) : ∃ d : ℕ, 2 ≤ d ∧ ∃ p : ℂ[X], IsPd d p ∧ S < mval p := by
   classical
   set A : ℝ := max ((S + 4) / 2) 2 with hAdef

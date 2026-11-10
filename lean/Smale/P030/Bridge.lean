@@ -1,9 +1,11 @@
 /-
-Smale/P030/Bridge.lean — the bridge in disc form: [JN, Prop. 4.3] and the reduction (P) of the proof texts, together.
-For a univalent `W` and a locally univalent `G` on the unit disk, both normalized, if `|G| > A' |W|` on a collar of the
-unit circle, then a polynomial `p ∈ 𝓟_d` has `m(p) > A` for every `A < A'`. No Jordan domain, no Riemann map and no
+Smale/P030/Bridge.lean — the bridge in disc form: [JN, Prop. 4.3] and the reduction from a domain to a pair of
+functions on the disc, together.
+For a univalent `W` and a locally univalent `G` on the unit disk, both normalized, if `|G| ≥ A' |W|` on a collar of the
+unit circle, then for every `A` with `0 < A < A'` a polynomial `p ∈ 𝓟_d` has `m(p) > A`. No Jordan domain, no Riemann map and no
 Hilbert lemniscate theorem enter: `G ∘ W⁻¹` is approximated on `W(closed disk)`, and the proof of `jatarNg_prop_4_2_proved`
 goes through with `G` in place of `W B / B(0)`.
+Copyright (C) Dave Goel 2026--now. Licensed under the Apache License 2.0; see LICENSE.
 -/
 import Smale.Proofs.JNAssembly
 

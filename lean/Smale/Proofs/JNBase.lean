@@ -1,6 +1,7 @@
 /-
 Smale/Proofs/JNBase.lean — finite Blaschke products near the circle, and the base polynomial `P` of [JN, Prop. 4.2]:
 `P(W z)` close to `G z` on a closed subdisk, and `P'(W z)` bounded away from `0` there.
+Copyright (C) Dave Goel 2026--now. Licensed under the Apache License 2.0; see LICENSE.
 -/
 import Smale.Proofs.Disk
 import Smale.Proofs.JNRunge

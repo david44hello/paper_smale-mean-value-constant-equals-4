@@ -3,6 +3,7 @@ Smale/P030/Defs.lean — the definitions for the proof that Smale's mean value c
 `W` side: the Koebe-type map `koebeD`, the Cayley map `cayley` and its inverse, the comb `ζ + lam Σ log (ζ - x)`.
 `F` side: the entire function `EE`, whose derivative is `exp(ξ^M) (1 - ξ^M/c)`, and the explicit map `stripY` of the
 unit disk into the half strip `{Re y < a, |Im y| < C}`, with its left inverse `stripT`.
+Copyright (C) Dave Goel 2026--now. Licensed under the Apache License 2.0; see LICENSE.
 -/
 import Smale.Defs.Basic
 
@@ -22,7 +23,7 @@ noncomputable def cayleyInv (w : ℂ) : ℂ := (w - I) / (w + I)
 /-- The comb `G(ζ) = ζ + lam Σ_x log(ζ - x)`, on the upper half plane. -/
 noncomputable def comb (lam : ℝ) (xs : Finset ℝ) (ζ : ℂ) : ℂ := ζ + lam * ∑ x ∈ xs, Complex.log (ζ - x)
 
-/-- `φ = μ⁻¹ ∘ G ∘ μ`: a univalent self-map of the disk that sends each `μ⁻¹(x)`, `x ∈ xs`, to the point `1`. -/
+/-- `φ = μ⁻¹ ∘ G ∘ μ`: a univalent self-map of the disk that tends to the point `1` at each `μ⁻¹(x)`, `x ∈ xs`, when `lam > 0`. -/
 noncomputable def combDisc (lam : ℝ) (xs : Finset ℝ) (t : ℂ) : ℂ := cayleyInv (comb lam xs (cayley t))
 
 /-- `E₀(ξ) = ∫_0^ξ exp(s^M) ds`, written on the segment from `0` to `ξ`. -/
@@ -47,7 +48,7 @@ and `p = √m` in the first quadrant, `z = -i (p - 1)/(p + 1)`. -/
 noncomputable def stripZ (w : ℂ) : ℂ :=
   -I * ((((w - I) / (w + I)) ^ (1 / 2 : ℂ) - 1) / (((w - I) / (w + I)) ^ (1 / 2 : ℂ) + 1))
 
-/-- The map of the disk onto the half strip, `y = a + log(z)/β`, by elementary functions. -/
+/-- The map of the disk into the half strip, `y = a + log(z)/β`, by elementary functions. -/
 noncomputable def stripY (a C : ℝ) (u : ℂ) : ℂ := a + Complex.log (stripZ (stripW a C u)) / stripBeta C
 
 /-- The left inverse: `T(y) = (-s - w)/(-s + w)`, `w = sinh(β (y - a))`, `s = sinh(β a)`. -/

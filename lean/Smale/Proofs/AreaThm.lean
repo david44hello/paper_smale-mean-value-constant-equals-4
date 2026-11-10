@@ -9,6 +9,7 @@ the mean of `u² h'(u)` is `0` and `|h'|² ≥ 2 Re(conj(c) h') - |c|²` pointwi
 `|u| = a` into `K`; every point outside `K` is a value of `φ` on `0 < |u| < a` (open-closed argument on the connected
 outside of `K`); and `φ` is injective. The area of `K` is at most `π r²`, since `|det T| ≤ 1`.
 (4) Compare the two areas, let `a → 0`, then `b → 1`.
+Copyright (C) Dave Goel 2026--now. Licensed under the Apache License 2.0; see LICENSE.
 -/
 import Smale.Defs.Basic
 

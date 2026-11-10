@@ -1,7 +1,11 @@
 /-
-Smale/Proofs/Disk.lean — the disk algebra of Section 3 of the paper "Smale's mean value constant exceeds 1.1559": the identity
+Smale/Proofs/Disk.lean — the disk algebra of [G, Section 8] (Lemmas 8.1 and 8.3 and their proofs): the identity
 `|1 - āb|² - |a - b|² = (1 - |a|²)(1 - |b|²)`, `1/|B_a(b)|² = J(a, b)`, the automorphism `φ_b` of the unit disk, and
 `B_a ∘ φ_b = λ B_γ`.
+The names `sec3_*` and `lem_3_1_*` are labels only; they do not refer to numbered items of [G].
+[G] D. Goel, Smale's mean value constant exceeds 1.1559, and other miscellanea, Zenodo, 2026, version 6.08,
+https://doi.org/10.5281/zenodo.23729510.
+Copyright (C) Dave Goel 2026--now. Licensed under the Apache License 2.0; see LICENSE.
 -/
 import Smale.Defs.Basic
 
@@ -9,7 +13,7 @@ namespace Smale
 
 open Polynomial Complex Metric ComplexConjugate
 
-/-- `|1 - āb|² - |a - b|² = (1 - |a|²)(1 - |b|²)` (tex l.181). -/
+/-- `|1 - āb|² - |a - b|² = (1 - |a|²)(1 - |b|²)` ([G, proof of Lemma 8.1]). -/
 theorem normSq_one_sub_conj_mul (a b : ℂ) :
     ‖1 - conj a * b‖ ^ 2 - ‖a - b‖ ^ 2 = (1 - ‖a‖ ^ 2) * (1 - ‖b‖ ^ 2) := by
   simp only [Complex.sq_norm, Complex.normSq_apply, Complex.sub_re, Complex.sub_im, Complex.mul_re,
@@ -40,12 +44,12 @@ theorem one_add_mul_ne_zero {x y : ℂ} (hx : ‖x‖ < 1) (hy : ‖y‖ ≤ 1) 
 theorem one_add_conj_mul_ne_zero {b w : ℂ} (hb : ‖b‖ < 1) (hw : ‖w‖ ≤ 1) : 1 + conj b * w ≠ 0 :=
   one_add_mul_ne_zero (by rwa [Complex.norm_conj]) hw
 
-/-- tex l.182, exactly the Statements type: `|1 - āb|² - |a - b|² = (1 - |a|²)(1 - |b|²)`. -/
+/-- [G, proof of Lemma 8.1]: `|1 - āb|² - |a - b|² = (1 - |a|²)(1 - |b|²)`. -/
 theorem sec3_J_identity_proved (a b : ℂ) :
     ‖1 - conj a * b‖ ^ 2 - ‖a - b‖ ^ 2 = (1 - ‖a‖ ^ 2) * (1 - ‖b‖ ^ 2) :=
   normSq_one_sub_conj_mul a b
 
-/-- tex l.182, exactly the Statements type: `1/|B_a(b)|² = J(a, b)` for `a ≠ b`. -/
+/-- [G, proofs of Lemmas 8.1 and 8.3]: `1/|B_a(b)|² = J(a, b)` for `a ≠ b`. -/
 theorem sec3_J_proved (a b : ℂ) (_ha : a ∈ disk) (_hb : b ∈ disk) (hab : a ≠ b) :
     1 / ‖blaschkeFactor a b‖ ^ 2 = Jab a b := by
   have hY : ‖a - b‖ ^ 2 ≠ 0 := pow_ne_zero _ (norm_ne_zero_iff.2 (sub_ne_zero.2 hab))
@@ -98,7 +102,7 @@ theorem hasDerivAt_diskAut (b : ℂ) : HasDerivAt (diskAut b) (1 - (‖b‖ : �
   refine (hn.div hd h0).congr_deriv ?_
   simp [Complex.mul_conj']
 
-/-- tex l.181-182: `φ(w) = (w + b)/(1 + b̄w)` maps `𝔻` onto `𝔻`, `φ(0) = b`, `φ'(0) = 1 - |b|²`. -/
+/-- [G, proofs of Lemmas 8.1 and 8.3]: `φ(w) = (w + b)/(1 + b̄w)` maps `𝔻` onto `𝔻`, `φ(0) = b`, `φ'(0) = 1 - |b|²`. -/
 theorem sec3_phi_proved (b : ℂ) (hb : b ∈ disk) :
     Set.BijOn (diskAut b) disk disk ∧ diskAut b 0 = b ∧ deriv (diskAut b) 0 = 1 - (‖b‖ : ℂ) ^ 2 := by
   have hb' : ‖b‖ < 1 := mem_ball_zero_iff.1 hb
@@ -109,7 +113,7 @@ theorem cancel_div_div (N D u cu : ℂ) (hu : u ≠ 0) (hcu : cu ≠ 0) (hD : D 
     cu / u * ((N / cu) / (D / u)) = N / D := by
   field_simp
 
-/-- Lemma 3.1, proof (tex l.210-211): `B_a ∘ φ_b = λ B_γ` on `𝔻`, with `|λ| = 1` and `γ ∈ 𝔻`; here
+/-- [G, proof of Lemma 8.3] ("Each `B_{a_j} ∘ φ` is a Blaschke factor"): `B_a ∘ φ_b = λ B_γ` on `𝔻`, with `|λ| = 1` and `γ ∈ 𝔻`; here
 `λ = (1 - a b̄)/(1 - ā b)` and `γ = (a - b)/(1 - a b̄)`. -/
 theorem lem_3_1_aut_proved (a b : ℂ) (ha : a ∈ disk) (hb : b ∈ disk) :
     ∃ lam γ : ℂ, ‖lam‖ = 1 ∧ γ ∈ disk ∧ ∀ w ∈ disk, blaschkeFactor a (diskAut b w) = lam * blaschkeFactor γ w := by

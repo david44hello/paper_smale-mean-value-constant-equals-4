@@ -7,6 +7,7 @@ away from its critical values. Normalizing gives `G ∈ 𝒮` with `p(ρ G(w)) =
 point `z`. Put `u_z = ρ/z`. Koebe's bound (Smale/Proofs/Koebe.lean) gives `|a₂(G) + u_z| ≤ 2`, and Vieta gives
 `Σ u_z = 2 a₂(G)`, the sum over the `d - 1` critical points counted with multiplicity. Summing the real part of
 `conj(u)(u - v)` over the `u_z`, with `u = u_{z₁}`, gives `(d + 1) |u| ≤ 4 (d - 1)`. And `m(p) ≤ |p(z₁)|/|z₁| = |u|`.
+Copyright (C) Dave Goel 2026--now. Licensed under the Apache License 2.0; see LICENSE.
 -/
 import Smale.Proofs.Koebe
 
