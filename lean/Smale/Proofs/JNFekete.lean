@@ -5,7 +5,11 @@ bounded by `1` on `E`; a finite family of polynomials separating `F` from `E` th
 large on `F`. This replaces Hilbert's lemniscate theorem.
 Copyright (C) Dave Goel 2026--now. Licensed under the Apache License 2.0; see LICENSE.
 -/
-import Smale.Proofs.JNPole
+module
+
+public import Smale.Proofs.JNPole
+
+@[expose] public section
 
 namespace Smale
 

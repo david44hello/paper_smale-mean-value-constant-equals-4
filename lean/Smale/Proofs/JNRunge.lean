@@ -4,8 +4,12 @@ uniformly near `p ∘ W` for a polynomial `p` (`W` univalent). The Cauchy formul
 as an integral of functions `1/(W ζ - w)`, each of them a uniform limit of polynomials by pole pushing.
 Copyright (C) Dave Goel 2026--now. Licensed under the Apache License 2.0; see LICENSE.
 -/
-import Smale.Proofs.JNUnivalent
-import Smale.Proofs.JNPole
+module
+
+public import Smale.Proofs.JNUnivalent
+public import Smale.Proofs.JNPole
+
+@[expose] public section
 
 namespace Smale
 

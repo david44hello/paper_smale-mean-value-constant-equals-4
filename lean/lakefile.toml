@@ -13,3 +13,16 @@ name = "Smale"
 globs = ["Smale"]
 leanOptions = { autoImplicit = false, relaxedAutoImplicit = false }
 weakLeanArgs = ["-j1"]
+
+# Palomar's statement file (definitions written out, every proof `sorry`) and its proved counterpart.
+[[lean_lib]]
+name = "Challenge"
+roots = ["Challenge"]
+leanOptions = { autoImplicit = false, relaxedAutoImplicit = false }
+weakLeanArgs = ["-j1"]
+
+[[lean_lib]]
+name = "Solution"
+roots = ["Solution"]
+leanOptions = { autoImplicit = false, relaxedAutoImplicit = false }
+weakLeanArgs = ["-j1"]

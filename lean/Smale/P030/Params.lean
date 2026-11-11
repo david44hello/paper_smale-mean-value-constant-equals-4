@@ -3,7 +3,11 @@ Smale/P030/Params.lean — the `M`-th root transform `ξ(t)^M = y(t^M)` of a uni
 numbers `M`, `a`, then `C`.
 Copyright (C) Dave Goel 2026--now. Licensed under the Apache License 2.0; see LICENSE.
 -/
-import Smale.P030.Defs
+module
+
+public import Smale.P030.Defs
+
+@[expose] public section
 
 namespace Smale.P030
 

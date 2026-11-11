@@ -4,9 +4,13 @@ Smale/Proofs/JNAssembly.lean — [JN, Prop. 4.2], the first sentence, proved: fo
 general, Hilbert's lemniscate theorem and the Jordan curve theorem; see the modules imported here.
 Copyright (C) Dave Goel 2026--now. Licensed under the Apache License 2.0; see LICENSE.
 -/
-import Smale.Proofs.JNBase
-import Smale.Proofs.JNCrit
-import Smale.Proofs.JNFekete
+module
+
+public import Smale.Proofs.JNBase
+public import Smale.Proofs.JNCrit
+public import Smale.Proofs.JNFekete
+
+@[expose] public section
 
 namespace Smale
 

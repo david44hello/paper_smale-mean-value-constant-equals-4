@@ -1,0 +1,189 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+# formalization.yaml v0.4 for the Palomar registry: Lean 4 proof of Theorem 1.1 of "Smale's mean value constant (1981)
+# equals 4".
+version: "v0.4"
+
+project:
+  name: "Smale's mean value constant equals 4"
+  description: >-
+    A Lean 4 proof that Smale's mean value constant equals 4. For a complex
+    polynomial p of degree d >= 2 with p(0) = 0 and p'(0) != 0, let S(p) be the
+    minimum of |p(c)/(c p'(0))| over the critical points c of p, let K(d) be the
+    supremum of S(p) over all such p of degree d, and let K* be the supremum of
+    K(d) over d >= 2. In 1981 Smale proved K* <= 4 and asked whether 4 can be
+    replaced by 1 (and asked it again in 2000). The formalization proves
+    K* = lim_{d -> oo} K(d) = 4, which is
+    Theorem 1.1 of D. Goel, "Smale's mean value constant (1981) equals 4". It
+    also proves Smale's bound K(d) <= 4, that K(d) does not decrease with d, and
+    that K(d) < 4 for every d.
+
+    Comparison with Smale's conjecture. Smale asked whether K* = 1. That was
+    disproved in 2026 (Adamczewski's Lean disproof; Adamczewski and Colbrook).
+    Jatar and Ng then proved K* > 1.1018, and the author proved K* > 1.1559.
+    This project does not prove the conjecture: it answers Smale's question in
+    the negative. K* equals 4, Smale's own bound, so no constant smaller than 4
+    works for all degrees. In each single degree the constant stays below 4:
+    K(d) <= 4^((d-2)/(d-1)) (Beardon, Minda and Ng, 2002), and
+    K(d) < 4 - 2.263/sqrt(d) for d >= 8 (Crane, 2007). So the supremum K* is not
+    attained.
+  authors:
+    - "Dave Goel"
+  license: "Apache-2.0"
+  responsible_maintainers:
+    - "Dave Goel"
+
+classification:
+  arxiv: ["math.CV"]
+  msc2020: ["30C10", "30C15", "30C55"]
+
+sources:
+  - title: "Smale's mean value constant (1981) equals 4"
+    authors:
+      - "Dave Goel"
+    id: "https://doi.org/10.5281/zenodo.24069884"
+    type: "paper"
+    location: "Zenodo (all versions); also Hexagon, https://hexagonmath.org/2611.00282"
+    relationship: "formalizes"
+    note: "Theorem 1.1 of version 2.70, K* = lim K(d) = 4, is the formalized statement."
+    license: "All rights reserved (Zenodo record); CC BY-SA 4.0 (Hexagon copy)"
+    author_endorsement: "participated"
+  - title: "The fundamental theorem of algebra and complexity theory"
+    authors:
+      - "S. Smale"
+    id: "Bull. Amer. Math. Soc. (N.S.) 4 (1981), 1-36"
+    type: "paper"
+    relationship: "background"
+    note: "States the mean value problem and proves the bound 4 (K* <= 4); asks whether 4 can be replaced by 1."
+  - title: "Mathematical problems for the next century"
+    authors:
+      - "S. Smale"
+    id: "Mathematics: Frontiers and Perspectives, Amer. Math. Soc., 2000, 271-294"
+    type: "paper"
+    relationship: "background"
+    note: "Asks the question again, as problem Add.1 (Mean Value Problem) of its addenda, with c = 1."
+  - title: "Smale's mean value constant and admissible univalent Blaschke pairs"
+    authors:
+      - "A. Jatar"
+      - "T. W. Ng"
+    id: "arXiv:2610.21472v2"
+    type: "paper"
+    relationship: "adapts"
+    note: "The paper's proof rests on a reduction due to Jatar and Ng (their Proposition 4.3 and Theorem 4.4); the paper states it as Proposition 2.1, which is their Proposition 4.3. The Lean proof uses its own disc form of it (Smale/P030/Bridge.lean, bridge_pair), proved in the project; the analytic-Jordan-domain form is not formalized."
+  - title: "Smale's mean value conjecture and the hyperbolic metric"
+    authors:
+      - "A. F. Beardon"
+      - "D. Minda"
+      - "T. W. Ng"
+    id: "Math. Ann. 322 (2002), 623-632"
+    type: "paper"
+    relationship: "background"
+    note: "K(d) <= 4^((d-2)/(d-1)) < 4; not formalized here."
+  - title: "Extremal polynomials in Smale's mean value conjecture"
+    authors:
+      - "E. Crane"
+    id: "Comput. Methods Funct. Theory 6 (2006), no. 1, 145-163"
+    type: "paper"
+    relationship: "background"
+    note: "K(d) does not decrease with d; the project proves this itself (Kd_mono)."
+  - title: "A bound for Smale's mean value conjecture for complex polynomials"
+    authors:
+      - "E. Crane"
+    id: "Bull. Lond. Math. Soc. 39 (2007), no. 5, 781-791"
+    type: "paper"
+    relationship: "background"
+    note: "K(d) < 4 - 2.263/sqrt(d) for d >= 8 (not formalized here)."
+  - title: "Smale's mean value conjecture (K = 1): disproof"
+    authors:
+      - "T. Adamczewski"
+    id: "https://github.com/tadamcz/mean-value-problem"
+    type: "other"
+    relationship: "background"
+    note: "Lean disproof of K* = 1 (2026). Not imported by this project."
+  - title: "From boundary geometry to counterexamples in Smale's mean value problem"
+    authors:
+      - "T. Adamczewski"
+      - "M. J. Colbrook"
+    id: "arXiv:2610.36158v1"
+    type: "paper"
+    relationship: "background"
+    note: "Disproof of K* = 1 (2026)."
+  - title: "Smale's mean value constant (1981) exceeds 1.1559"
+    authors:
+      - "Dave Goel"
+    id: "https://doi.org/10.5281/zenodo.24096098"
+    type: "paper"
+    relationship: "background"
+    note: "The previous lower bound, K* > 1.1559."
+
+related_formalizations:
+  - id: "https://github.com/tadamcz/mean-value-problem"
+    relationship: "independent"
+    note: "Lean disproof of Smale's conjecture K* = 1. This project proves the stronger fact K* = 4 and does not use it."
+
+status:
+  scope: >-
+    Compared by `lake comparator` (see alignment): Theorem 1.1 of the paper
+    (K* = lim K(d) = 4), stated in the paper's own normalization (p'(0) != 0)
+    and in the normalization p'(0) = 1. Also proved in the library, not among
+    the compared statements, each for d >= 2: both normalizations give the same
+    K(d); Smale's bound K(d) <= 4; the bound K(d) <= 4(d-1)/(d+1), listed under
+    Conte, Fujikawa and Lakic in the table of Adamczewski and Colbrook (their
+    Section 2.2); K(d) < 4; K(d) does not decrease with d. Not in this
+    entry: the paper's other numbered results (Theorem 1.2, Proposition 2.1,
+    Lemmas 2.2, 2.3 and 3.1, Propositions 3.2 and 4.1, Remarks 6.1-6.3) and the
+    estimates of Beardon-Minda-Ng and of Crane. The proof uses its own disc
+    form of the Jatar-Ng reduction instead of the paper's Proposition 2.1,
+    whose analytic-Jordan-domain form needs a part of the Jordan curve theorem
+    that Mathlib does not have, and Fekete points instead of the paper's
+    Lemma 2.2. Gaps and limits. The proof is not effective: for a given a < 4
+    it gives no bound on the least degree d with K(d) > a.
+  # Counted over the proof development; Challenge.lean's three open proofs are excluded, as Palomar asks.
+  sorry_count: 0
+  sorry_in_definitions: 0
+  # Every axiom the compared theorems use, as `#print axioms` prints them (the standard three).
+  axioms: ["propext", "Classical.choice", "Quot.sound"]
+
+automation:
+  methods:
+    - method: "agent"
+      tool_setup: "AI agents, steered by the author in a continuous critical dialogue"
+  notes: "The paper's AI Disclosure: This work was done overwhelmingly by AI models, steered by the author in a continuous critical dialogue, alternating between Anthropic's Claude and OpenAI's ChatGPT. The author takes full responsibility for the paper."
+
+fidelity:
+  divergences: >-
+    Known divergences from the paper. (1) K(d) and K* are suprema taken in the
+    extended real numbers (EReal), where every supremum exists; the theorems
+    say that K* equals the real number 4 and that K(d) tends to it. (2) S(p) is defined as an infimum
+    over the critical points; for the normalization p'(0) = 1 and d >= 2 the
+    library proves that it is attained (sec1_m_attained_proved). (3) K(d) is
+    defined for every natural number d; for d < 2, outside the paper's range,
+    its value is a convention of Lean's; K* is the supremum over d >= 2 only,
+    and the limit as d tends to infinity does not depend on those values.
+    (4) The route of the proof differs from the paper's in two places: its own
+    disc form of the Jatar-Ng reduction (Smale/P030/Bridge.lean) in place of
+    Proposition 2.1, and Fekete points (Smale/Proofs/JNFekete.lean) in place of
+    Lemma 2.2. Theorem 1.1 is stated as printed, with no added hypothesis.
+
+review:
+  status: "agent-reviewed"
+
+alignment:
+  namespace: "Smale"
+  statements:
+    - source: "Theorem 1.1 of the paper (version 2.70), in the paper's normalization p'(0) != 0"
+      lean: "Smale.P030.Rows.thm_1_1"
+      module: "Smale.P030.Rows.Thm11"
+      status: "proved"
+      note: "Proved in Smale/P030/Rows/Thm11.lean from kstar_eq_four and tendsto_Kd_four, with KdGen_eq_Kd (both normalizations give the same K(d))."
+    - source: "Theorem 1.1 of the paper, the value K* = 4, for p'(0) = 1"
+      lean: "Smale.P030.kstar_eq_four"
+      module: "Smale.P030.Contract"
+      status: "proved"
+      note: "Proved in Smale/P030/Contract.lean."
+    - source: "Theorem 1.1 of the paper, the limit K(d) -> 4, for p'(0) = 1"
+      lean: "Smale.P030.tendsto_Kd_four"
+      module: "Smale.P030.Contract"
+      status: "proved"
+      note: "Proved in Smale/P030/Contract.lean."
+
+acknowledgements: "Lean 4 and Mathlib, both at v4.35.0."

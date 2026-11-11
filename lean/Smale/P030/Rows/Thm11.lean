@@ -6,8 +6,12 @@ Smale/P030/Rows/Thm11.lean — Theorem 1.1 of the paper in the paper's own norma
 and Theorem 1.1 follows from `kstar_eq_four` and `tendsto_Kd_four`.
 Copyright (C) Dave Goel 2026--now. Licensed under the Apache License 2.0; see LICENSE.
 -/
-import Smale.P030.Contract
-import Smale.P030.Rows.DefsGen
+module
+
+public import Smale.P030.Contract
+public import Smale.P030.Rows.DefsGen
+
+@[expose] public section
 
 namespace Smale.P030.Rows
 

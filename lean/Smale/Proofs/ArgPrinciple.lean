@@ -9,7 +9,11 @@ proof of [G, Lemma 8.2]) are the case `c = 0`, `R = 1`; the small circles are us
 https://doi.org/10.5281/zenodo.23729510.
 Copyright (C) Dave Goel 2026--now. Licensed under the Apache License 2.0; see LICENSE.
 -/
-import Smale.Defs.Basic
+module
+
+public import Smale.Defs.Basic
+
+@[expose] public section
 
 namespace Smale
 

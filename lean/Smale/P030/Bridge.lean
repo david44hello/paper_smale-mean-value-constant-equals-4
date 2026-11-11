@@ -7,7 +7,11 @@ Hilbert lemniscate theorem enter: `G ∘ W⁻¹` is approximated on `W(closed di
 goes through with `G` in place of `W B / B(0)`.
 Copyright (C) Dave Goel 2026--now. Licensed under the Apache License 2.0; see LICENSE.
 -/
-import Smale.Proofs.JNAssembly
+module
+
+public import Smale.Proofs.JNAssembly
+
+@[expose] public section
 
 namespace Smale
 

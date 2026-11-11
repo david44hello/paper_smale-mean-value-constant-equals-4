@@ -3,7 +3,11 @@ Smale/Proofs/JNUnivalent.lean — univalent maps on the unit disk: the image of 
 never vanishes, and the complement of the image of a closed subdisk is connected.
 Copyright (C) Dave Goel 2026--now. Licensed under the Apache License 2.0; see LICENSE.
 -/
-import Smale.Defs.Basic
+module
+
+public import Smale.Defs.Basic
+
+@[expose] public section
 
 namespace Smale
 

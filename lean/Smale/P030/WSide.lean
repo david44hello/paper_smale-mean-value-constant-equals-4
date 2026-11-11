@@ -3,7 +3,11 @@ Smale/P030/WSide.lean — the `W` side of the pair: the Koebe-type map `koebeD`,
 and its inverse, and their composition `combDisc`, near the identity at `0` for small `lam`. Elementary functions only.
 Copyright (C) Dave Goel 2026--now. Licensed under the Apache License 2.0; see LICENSE.
 -/
-import Smale.P030.Defs
+module
+
+public import Smale.P030.Defs
+
+@[expose] public section
 
 namespace Smale.P030
 

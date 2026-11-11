@@ -4,7 +4,11 @@ on the exit. `rtU` is the branch of `y^{1/M}` holomorphic across the negative ax
 need no limit at a cut.
 Copyright (C) Dave Goel 2026--now. Licensed under the Apache License 2.0; see LICENSE.
 -/
-import Smale.P030.Defs
+module
+
+public import Smale.P030.Defs
+
+@[expose] public section
 
 namespace Smale.P030
 

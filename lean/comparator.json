@@ -1,0 +1,11 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "Smale.P030.Rows.thm_1_1",
+    "Smale.P030.kstar_eq_four",
+    "Smale.P030.tendsto_Kd_four"
+  ],
+  "definition_names": [],
+  "permitted_axioms": ["propext", "Quot.sound", "Classical.choice"]
+}

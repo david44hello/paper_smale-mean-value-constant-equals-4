@@ -5,13 +5,17 @@ No hypothesis on any classical fact appears.
 The reduction from a domain to a pair of functions on the disc, together with the bridge, is `bridge_pair`.
 Copyright (C) Dave Goel 2026--now. Licensed under the Apache License 2.0; see LICENSE.
 -/
-import Smale.P030.Bridge
-import Smale.P030.Defs
-import Smale.P030.EE
-import Smale.P030.Params
-import Smale.P030.Strip
-import Smale.P030.WSide
-import Smale.Proofs.CFLBound
+module
+
+public import Smale.P030.Bridge
+public import Smale.P030.Defs
+public import Smale.P030.EE
+public import Smale.P030.Params
+public import Smale.P030.Strip
+public import Smale.P030.WSide
+public import Smale.Proofs.CFLBound
+
+@[expose] public section
 
 namespace Smale.P030
 

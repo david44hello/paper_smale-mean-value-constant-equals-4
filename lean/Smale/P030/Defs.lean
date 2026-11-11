@@ -5,7 +5,11 @@ Smale/P030/Defs.lean — the definitions for the proof that Smale's mean value c
 unit disk into the half strip `{Re y < a, |Im y| < C}`, with its left inverse `stripT`.
 Copyright (C) Dave Goel 2026--now. Licensed under the Apache License 2.0; see LICENSE.
 -/
-import Smale.Defs.Basic
+module
+
+public import Smale.Defs.Basic
+
+@[expose] public section
 
 namespace Smale.P030
 

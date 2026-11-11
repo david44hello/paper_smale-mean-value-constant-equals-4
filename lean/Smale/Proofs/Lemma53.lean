@@ -15,7 +15,11 @@ The names `lem_5_3_*` and `sec1_*` are labels only; they do not refer to numbere
 https://doi.org/10.5281/zenodo.23729510.
 Copyright (C) Dave Goel 2026--now. Licensed under the Apache License 2.0; see LICENSE.
 -/
-import Smale.Proofs.ArgPrinciple
+module
+
+public import Smale.Proofs.ArgPrinciple
+
+@[expose] public section
 
 namespace Smale
 

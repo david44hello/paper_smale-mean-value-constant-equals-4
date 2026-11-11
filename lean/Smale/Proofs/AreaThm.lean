@@ -11,7 +11,11 @@ outside of `K`); and `φ` is injective. The area of `K` is at most `π r²`, sin
 (4) Compare the two areas, let `a → 0`, then `b → 1`.
 Copyright (C) Dave Goel 2026--now. Licensed under the Apache License 2.0; see LICENSE.
 -/
-import Smale.Defs.Basic
+module
+
+public import Smale.Defs.Basic
+
+@[expose] public section
 
 namespace Smale.Koebe
 

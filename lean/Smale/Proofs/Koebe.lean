@@ -8,7 +8,11 @@ Koebe: if `G` omits `w`, the Koebe transform `G/(1 - G/w)` is in `𝒮` with sec
 Sanity rows: `area_b1_sharp`, `koebe_function_sharp` show that the hypotheses can be met and the constants are best possible.
 Copyright (C) Dave Goel 2026--now. Licensed under the Apache License 2.0; see LICENSE.
 -/
-import Smale.Proofs.AreaThm
+module
+
+public import Smale.Proofs.AreaThm
+
+@[expose] public section
 
 namespace Smale.Koebe
 
@@ -158,7 +162,7 @@ theorem bieberbach_a2 (hG : InClassS G) : ‖deriv (deriv G) 0 / 2‖ ≤ 2 := b
       rw [h00]
       exact ((htd 0 h0mem).differentiableAt hnhds).hasDerivAt
     have h1 : HasDerivAt (fun u : ℂ => t (u ^ 2)) (deriv t (0 ^ 2) * (((2 : ℕ) : ℂ) * 0 ^ (2 - 1))) 0 :=
-      htat.comp (0 : ℂ) (hasDerivAt_pow 2 (0 : ℂ))
+      htat.comp (h := fun u : ℂ => u ^ 2) (0 : ℂ) (hasDerivAt_pow 2 (0 : ℂ))
     have h2 : HasDerivAt hh (1 * t (0 ^ 2) + 0 * (deriv t (0 ^ 2) * (((2 : ℕ) : ℂ) * 0 ^ (2 - 1)))) 0 :=
       (hasDerivAt_id (0 : ℂ)).mul h1
     rw [h2.deriv]

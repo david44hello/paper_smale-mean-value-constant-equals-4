@@ -30,14 +30,14 @@ The paper defines K(d) in its own normalization: p of degree d >= 2 with p(0) = 
 
 ## Taken as given
 
-Nothing beyond Lean's three standard axioms (`propext`, `Classical.choice`, `Quot.sound`). The proof has no `sorry` and adds no axiom. The upper bound K* <= 4 (Smale's theorem) is proved here too, not assumed.
+Nothing beyond Lean's three standard axioms (`propext`, `Classical.choice`, `Quot.sound`). The proof has no `sorry` and adds no axiom. `Challenge.lean` restates the three theorems with their proofs left open (`sorry`), as the Palomar registry asks; it is not part of the proof. The upper bound K* <= 4 (Smale's theorem) is proved here too, not assumed.
 
 ## How to check
 
 You need `elan`. The toolchain is fixed in `lean-toolchain` (Lean v4.35.0), and Mathlib is fixed at v4.35.0 in `lake-manifest.json`.
 
 ```
-git clone --branch v2.50 https://github.com/david44hello/paper_smale-mean-value-constant-equals-4
+git clone --branch v2.70 https://github.com/david44hello/paper_smale-mean-value-constant-equals-4
 cd paper_smale-mean-value-constant-equals-4/lean
 lake exe cache get
 lake build
@@ -55,6 +55,6 @@ Each must print `[propext, Classical.choice, Quot.sound]`.
 
 ## Status
 
-Of the paper's numbered results, only Theorem 1.1 is stated here in the paper's form. `lake comparator` accepted all three theorems above on November 9, 2026.
+Of the paper's numbered results, only Theorem 1.1 is stated here in the paper's form. `lake comparator` accepted all three theorems above on November 11, 2026.
 
 Copyright (C) Dave Goel 2026--now. Licensed under the Apache License 2.0; see LICENSE.

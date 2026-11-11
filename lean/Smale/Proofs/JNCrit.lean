@@ -7,7 +7,11 @@ below `1 - ρ` there is no critical point at all; in the band `[1 - ρ, 1 + ρ]`
 `|q(b)|^{m+1}` beats `a(b)`, because `|a| ≤ C |q|^e` wherever `|q| ≥ 1`.
 Copyright (C) Dave Goel 2026--now. Licensed under the Apache License 2.0; see LICENSE.
 -/
-import Smale.Proofs.Lemma53
+module
+
+public import Smale.Proofs.Lemma53
+
+@[expose] public section
 
 namespace Smale
 

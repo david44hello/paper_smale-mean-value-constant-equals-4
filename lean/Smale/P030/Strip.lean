@@ -3,7 +3,11 @@ Smale/P030/Strip.lean — the explicit map `stripY` of the unit disk into the ha
 inverse `stripT`: elementary functions only, no Riemann map and no boundary theory.
 Copyright (C) Dave Goel 2026--now. Licensed under the Apache License 2.0; see LICENSE.
 -/
-import Smale.P030.Defs
+module
+
+public import Smale.P030.Defs
+
+@[expose] public section
 
 namespace Smale.P030
 

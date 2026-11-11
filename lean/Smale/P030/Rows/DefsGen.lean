@@ -4,7 +4,11 @@ degree `d` with `p(0) = 0` and `p'(0) ≠ 0`, and the ratio `|p(c)/(c p'(0))|` a
 are in Section 1 of the paper "Smale's mean value constant (1981) equals 4".
 Copyright (C) Dave Goel 2026--now. Licensed under the Apache License 2.0; see LICENSE.
 -/
-import Smale.Defs.Basic
+module
+
+public import Smale.Defs.Basic
+
+@[expose] public section
 
 namespace Smale.P030.Rows
 

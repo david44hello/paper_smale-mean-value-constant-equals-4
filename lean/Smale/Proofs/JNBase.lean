@@ -3,8 +3,12 @@ Smale/Proofs/JNBase.lean — finite Blaschke products near the circle, and the b
 `P(W z)` close to `G z` on a closed subdisk, and `P'(W z)` bounded away from `0` there.
 Copyright (C) Dave Goel 2026--now. Licensed under the Apache License 2.0; see LICENSE.
 -/
-import Smale.Proofs.Disk
-import Smale.Proofs.JNRunge
+module
+
+public import Smale.Proofs.Disk
+public import Smale.Proofs.JNRunge
+
+@[expose] public section
 
 namespace Smale
 

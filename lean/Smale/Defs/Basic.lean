@@ -8,7 +8,11 @@ https://doi.org/10.5281/zenodo.23729510.
 TRUST SURFACE: every definition cites its place in [G] and was checked against that text.
 Copyright (C) Dave Goel 2026--now. Licensed under the Apache License 2.0; see LICENSE.
 -/
-import Mathlib
+module
+
+public import Mathlib
+
+@[expose] public section
 
 namespace Smale
 
