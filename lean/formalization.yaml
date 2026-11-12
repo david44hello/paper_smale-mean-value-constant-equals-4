@@ -165,7 +165,10 @@ fidelity:
     Lemma 2.2. Theorem 1.1 is stated as printed, with no added hypothesis.
 
 review:
-  status: "agent-reviewed"
+  status: "agent-reviewed, author-verified"
+  reviewers:
+    - "OpenAI Codex, which wrote none of the files"
+  notes: "Method: build from an empty folder; axiom check (the three standard axioms only); kernel replay of 23 modules; Lean proof checkers on an exported copy; lake comparator as Palomar runs it. OpenAI Codex read the log of each run and compared the Lean statement of Theorem 1.1 and the ten definitions with the paper. The human author checked this formalization and stands by it."
 
 alignment:
   namespace: "Smale"

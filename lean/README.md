@@ -37,7 +37,7 @@ Nothing beyond Lean's three standard axioms (`propext`, `Classical.choice`, `Quo
 You need `elan`. The toolchain is fixed in `lean-toolchain` (Lean v4.35.0), and Mathlib is fixed at v4.35.0 in `lake-manifest.json`.
 
 ```
-git clone --branch v2.70 https://github.com/david44hello/paper_smale-mean-value-constant-equals-4
+git clone --branch v2.71 https://github.com/david44hello/paper_smale-mean-value-constant-equals-4
 cd paper_smale-mean-value-constant-equals-4/lean
 lake exe cache get
 lake build
