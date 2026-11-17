@@ -1,5 +1,7 @@
 # Smale's mean value constant (1981) equals 4
 
+[![Paperlane Lean: builds](https://pragyaangaur.dev/Paperlane/lean/david44hello/paper_smale-mean-value-constant-equals-4.svg)](https://pragyaangaur.dev/Paperlane/lean/david44hello/paper_smale-mean-value-constant-equals-4.html)
+
 What is in this repository:
 
 - [lean/](lean/) - the Lean 4 proof that Smale's mean value constant equals 4. Click it to see the proof, what it takes as given, and how to check it.
